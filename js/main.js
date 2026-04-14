@@ -143,6 +143,30 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') navigate(1);
   });
 
+  // ============ SERVICE CARD: LEARN MORE TOGGLE ============
+  document.querySelectorAll('.btn-read-more').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const details = btn.closest('.service-card').querySelector('.service-details');
+      const isHidden = details.hasAttribute('hidden');
+      details.toggleAttribute('hidden');
+      btn.textContent = isHidden ? 'Show Less' : 'Learn More';
+      btn.classList.toggle('active', isHidden);
+    });
+  });
+
+  // ============ SERVICE CARD: GET QUOTE → CONTACT ============
+  document.querySelectorAll('.btn-get-quote').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const serviceValue = btn.dataset.service;
+      const serviceSelect = document.getElementById('service');
+      if (serviceSelect && serviceValue) {
+        serviceSelect.value = serviceValue;
+      }
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
   // ============ CONTACT FORM → WHATSAPP ============
   const MAGGIE_PHONE = '254733444330';
   const contactForm = document.getElementById('contactForm');
