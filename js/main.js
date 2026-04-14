@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ============ CONTACT FORM → WHATSAPP ============
-  const MAGGIE_PHONE = '254722415079';
+  const MAGGIE_PHONE = '254733444330';
   const contactForm = document.getElementById('contactForm');
 
   contactForm.addEventListener('submit', (e) => {
